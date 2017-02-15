@@ -1,0 +1,39 @@
+html {
+	background-color: transparent;
+}
+
+#content {
+	top: 0;
+	left: 0;
+	font-family: 'Microsoft YaHei';
+	color: White;
+	font-size: 13pt;
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.20);
+	padding: 10px;
+	padding-top: 0px;
+	vertical-align: text-top;
+	width: 250px;
+	overflow: hidden;
+}
+
+.talking {
+	/*border: lime 3px solid !important;*/
+	/*	box-sizing: border-box;*/
+	opacity: 1 !important;
+}
+
+.useritem > img {
+	border: transparent 3px solid;
+	max-width: 70px;
+	max-height: 70px;
+	margin-right: 15px;
+	vertical-align: middle;
+	opacity: 0.6;
+}
+
+.useritem {
+	
+}
