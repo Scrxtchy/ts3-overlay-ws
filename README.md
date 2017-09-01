@@ -1,4 +1,4 @@
 # ts3-overlay-ws
 A teamspeak overlay using websockets
 
-![](https://jii.moe/HJf4R0-Ke.png)
+![](https://s3.wasabisys.com/tenryuu/astrid/2017-09/17-09-01_15-31-12.png)
