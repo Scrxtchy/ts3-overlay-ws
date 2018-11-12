@@ -15,20 +15,14 @@ CLIENT_MOVE = {
 	LEFT: 1
 }
 
-AVATAR_CODE = {
-	ERROR: 0,
-	PATH: 1
-}
-
 function parseAvatarPath(argument) {
-	if(argument[AVATAR_CODE.ERROR] != 0 || argument[AVATAR_CODE.PATH] == ""){
+	if (argument == ""){
 		avatars = ['https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png','https://discordapp.com/assets/6debd47ed13483642cf09e832ed0bc1b.png','https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png','https://discordapp.com/assets/dd4dbc0016779df1378e7812eabaa04d.png','https://discordapp.com/assets/1cbd08c76f8af6dddce02c5138971129.png']
 		return avatars[Math.floor(Math.random()*avatars.length)];
 	} else {
-		return 'file:///' + argument[AVATAR_CODE.PATH].replace(/\\/g,'/');	
+		//return 'file:///' + argument[AVATAR_CODE.PATH].replace(/\\/g,'/');
+		return 'http://localhost:58008/'+argument;
 	}
-	
-	
 }
 
 function createClientDiv(argument) {
@@ -78,10 +72,10 @@ function nearbyClientMoveEvent(data){
 	
 	switch(data.status){
 		case CLIENT_MOVE.JOINED:
-			document.getElementById('userlist').appendChild(createClientDiv(data.client))
+			document.getElementById('userlist').appendChild(createClientDiv(data.client));
 			break;
 		case CLIENT_MOVE.LEFT:
-			var user = document.getElementById('client_' + data.client[CLIENTINFO.CLIENT_ID]).remove()
+			var user = document.getElementById('client_' + data.client[CLIENTINFO.CLIENT_ID]).remove();
 			break;
 	}
 }
@@ -95,7 +89,7 @@ function onClientMoveEvent(data){
 }
 
 function onClientDisplayNameChanged(argument){
-	document.getElementById('client_' + argument.client[CLIENTINFO.CLIENT_ID]).childNodes[1].innerText = argument.client[CLIENTINFO.CLIENT_NAME]
+	document.getElementById('client_' + argument.client[CLIENTINFO.CLIENT_ID]).childNodes[1].innerText = argument.client[CLIENTINFO.CLIENT_NAME];
 }
 
 function handleMessage(data){

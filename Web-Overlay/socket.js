@@ -1,4 +1,7 @@
-	websocket = new WebSocket('ws://localhost:8000/');
+	
+startsocket() 
+function startsocket(){
+	websocket = new WebSocket('ws://localhost:58008/ws');
 	websocket.onopen = function(evt) { onOpen(evt) };
 	websocket.onclose = function(evt) { onClose(evt) };
 	websocket.onmessage = function(evt) { onMessage(evt) };
@@ -12,6 +15,7 @@
 	function onClose(evt)
 	{
 		console.log("disconnected from WebSocket");
+		setTimeout(startsocket, 1000 * 3)
 	}
 
 	function onMessage(evt)
@@ -29,3 +33,4 @@
 	{
 		console.log(message);
 	}
+}
